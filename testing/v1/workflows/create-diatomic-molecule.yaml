@@ -18,7 +18,7 @@ steps:
       language: python3
       imports: [diatomic-molecule]
       parameters:
-        file: diatomic-molecule/tasks/diatomic_molecule_tasks.py
+        file: diatomic-molecule/steps/diatomic_molecule.py
         function: create_diatomic_molecule
     resources:
       cpu: "1000m"
