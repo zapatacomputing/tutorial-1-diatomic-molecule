@@ -15,7 +15,7 @@ steps:
 - name: test
   config:
     runtime:
-      type: python3
+      language: python3
       imports: [diatomic-molecule]
       parameters:
         file: diatomic-molecule/tasks/diatomic_molecule_tasks.py
