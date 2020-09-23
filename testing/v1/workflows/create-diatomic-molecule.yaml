@@ -1,0 +1,39 @@
+# Workflow API version
+apiVersion: io.orquestra.workflow/1.0.0
+
+# Prefix for workflow ID
+name: create-diatomic-molecule
+
+imports:
+- name: diatomic-molecule
+  type: git
+  parameters:
+    repository: "git@github.com:zapatacomputing/tutorial-1-diatomic-molecule.git"
+    branch: "dev"
+
+steps:
+- name: test
+  config:
+    runtime:
+      language: python3
+      imports: [diatomic-molecule]
+      parameters:
+        file: diatomic-molecule/diatomicmolecule.py
+        function: create_diatomic_molecule
+    resources:
+      cpu: "1000m"
+      memory: "1Gi"
+      disk: "10Gi"
+  inputs:
+    - species1: "H"
+      type: string
+    - species2: "H"
+      type: string
+    - bond_length: 0.7
+      type: float
+  outputs:
+    - name: molecule
+      type: molecular-geometry
+
+types:
+  - molecular-geometry
