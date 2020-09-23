@@ -9,7 +9,7 @@ imports:
   type: git
   parameters:
     repository: "git@github.com:zapatacomputing/tutorial-1-diatomic-molecule.git"
-    branch: "workflow-v1"
+    branch: "dev"
 
 steps:
 - name: test
